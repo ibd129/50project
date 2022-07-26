@@ -48,14 +48,14 @@ export default {
     .loading-text{
         width:120px;
         height: 100px;
-            font-size: 50px;
-            font-weight: bold;
-            opacity: v-bind('data.opacityNum');
-            transition:opacity 3s;
-            position: absolute;
-            left: 50%;
-            top:50%;
-            color: white;
-            transform: -50% -50%;
-        }
+        font-size: 50px;
+        font-weight: bold;
+        opacity: v-bind('data.opacityNum');
+        transition:opacity 3s;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        color: white;
+        transform: translate(-50%, -50%);
+      }
 </style>
