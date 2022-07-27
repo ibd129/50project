@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { onMounted, reactive } from '@vue/runtime-core'
+import { reactive } from '@vue/runtime-core'
 export default {
   name: 'BlurryLoading',
   setup () {
@@ -12,18 +12,16 @@ export default {
       opacityNum: 1,
       num: 0
     })
-    onMounted(() => {
-      setTimeout(() => {
-        data.opacityNum = 0
-      })
-      function numAdd () {
-        if (data.num < 100) {
-          data.num++
-        }
-        requestAnimationFrame(numAdd)
+    setTimeout(() => {
+      data.opacityNum = 0
+    })
+    function numAdd () {
+      if (data.num < 100) {
+        data.num++
       }
       requestAnimationFrame(numAdd)
-    })
+    }
+    requestAnimationFrame(numAdd)
     return {
       data
     }
