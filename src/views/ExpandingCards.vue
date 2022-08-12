@@ -1,15 +1,15 @@
 <template>
-  <div class="expanding-cards">
+  <div id="expanding-cards">
     <input type="radio" name="select" id="active1" checked/>
-    <label for="active1" class="panel"></label>
+    <label for="active1"></label>
     <input type="radio" name="select"  id="active2"/>
-    <label for="active2" class="panel"></label>
+    <label for="active2"></label>
     <input type="radio" name="select" id="active3"/>
-    <label for="active3" class="panel"></label>
+    <label for="active3"></label>
     <input type="radio" name="select" id="active4"/>
-    <label for="active4" class="panel"></label>
+    <label for="active4"></label>
     <input type="radio" name="select" id="active5"/>
-    <label for="active5" class="panel"></label>
+    <label for="active5"></label>
   </div>
 </template>
 
@@ -25,62 +25,47 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-.panel {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width:60vw;
-  height: 80vh;
-  border-radius: 50px;
-  color: #fff;
-  cursor: pointer;
-  margin: 10px;
-  position: relative;
-  flex: 0.5;
-  transition: all 700ms ease-in;
-}
-input[type="radio"]{
-  display: none;
-}
-label {
-  width: 15vw
-}
-input:checked+label{
-  display: block;
-  flex: 5;
-}
-.panel:nth-child(2){
-  background-image: url(http://pic21.photophoto.cn/20111120/0020032845797770_b.jpg);
-}
-
-.panel:nth-child(4){
-  background-image: url(http://pic1.win4000.com/wallpaper/2019-11-26/5ddcf251e7a79.jpg);
-}
-.panel:nth-child(6){
-  background-image: url(http://pic1.win4000.com/wallpaper/2019-11-27/5dde26e54240f.jpg);
-}
-.panel:nth-child(8){
-  color: orange;
-  background-image: url(http://pic1.win4000.com/wallpaper/2019-11-26/5ddcf25149f3d.jpg);
-}
-.panel:nth-child(10){
-  background-image: url(http://pic1.win4000.com/wallpaper/2019-11-26/5ddcf5bfc23b4.jpg);
-}
-.expanding-cards{
+#expanding-cards{
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
 }
-@media (max-width: 480px) {
-  .expanding-cards {
-    width: 100vw;
-  }
-
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
+input[type="radio"]{
+  display: none;
 }
+label {
+  height: 80vh;
+  flex: 0.5;
+  margin: 10px;
+  border-radius: 80px;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.7s ease-in ;
+}
+input:checked+label{
+  flex: 5;
+}
+label:nth-of-type(1) {
+    background-image: url(http://pic21.photophoto.cn/20111120/0020032845797770_b.jpg);
+}
+
+label:nth-of-type(2) {
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-06-02%2F5ed5e612bd337.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662894919&t=2588684c2e23507a0ce31794722eb521);
+}
+
+label:nth-of-type(3) {
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-04-24%2F5ea28c03c7eda.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662894869&t=62721931743f5d01aee5f74580d476eb);
+}
+
+label:nth-of-type(4) {
+    color: orange;
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2019-12-10%2F5def65a250ba9.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662894919&t=926590c8fdcba9c307533f2269fc6c0e);
+}
+
+label:nth-of-type(5) {
+    background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-02-27%2F5e577f9e5f02b.png&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662894919&t=32518b6175d7e64fbcef8170659e910f);
+}
+
 </style>

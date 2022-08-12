@@ -4,17 +4,15 @@
 </template>
 
 <script>
-import { reactive } from '@vue/runtime-core'
+import { reactive } from '@vue/reactivity'
 export default {
   name: 'BlurryLoading',
   setup () {
     const data = reactive({
-      opacityNum: 1,
-      num: 0
+      num: 0,
+      opacity: 1
     })
-    setTimeout(() => {
-      data.opacityNum = 0
-    })
+    // 数字增加
     function numAdd () {
       if (data.num < 100) {
         data.num++
@@ -23,37 +21,28 @@ export default {
     }
     requestAnimationFrame(numAdd)
     return {
-      data
+      data,
+      numAdd
     }
   }
 }
 </script>
 
-<style lang="scss">
-    .loading{
-        width: 100%;
-        height: 100vh;
-        background-image: url(http://pic1.win4000.com/wallpaper/2018-01-12/5a587e14cf639.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        animation: filterAn 2s linear;
-        @keyframes filterAn {
-            from {filter: blur(20px);}
-            to {filter: blur(0px);}
-        }
-    }
-    .loading-text{
-        width:120px;
-        height: 100px;
-        font-size: 50px;
-        font-weight: bold;
-        opacity: v-bind('data.opacityNum');
-        transition:opacity 3s;
-        position: absolute;
-        left: 50%;
-        top:50%;
-        color: white;
-        transform: translate(-50%, -50%);
-      }
+<style>
+.loading{
+  width: 100%;
+  height: 100vh;
+  background-image: url(http://pic1.win4000.com/wallpaper/2018-01-12/5a587e14cf639.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.loading-text{
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  font-weight: bold;
+}
 </style>
